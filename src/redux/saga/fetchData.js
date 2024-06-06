@@ -6,11 +6,9 @@ async function getApi(formData) {
     return fetch(apiUrl, {
         method: 'POST',
         body: formData,
-    }).then(async (response) => {
-        await response.blob()
-    }
+    }).then(async (response) => await response.blob()
     )
-        .catch((error) => { throw error })
+    .catch((error) => { throw error })
 }
 
 function* fetchImage(action) {
