@@ -10,6 +10,7 @@ export default defineConfig({
     vitePluginRequire.default(),
     replace({
       'process.env.VITE_APP_URL': JSON.stringify(process.env.VITE_APP_URL),
+      preventAssignment: true
     })
   ],
 })
