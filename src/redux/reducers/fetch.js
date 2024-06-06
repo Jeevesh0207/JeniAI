@@ -11,17 +11,21 @@ export default function getImageData(state = initialState, action) {
         case type.GET_FETCH_REQUESTED:
             return {
                 ...state,
+                img: "",
                 loading: true,
+                error: null
             }
         case type.GET_FETCH_SUCCESS:
             return {
                 ...state,
+                img: action.data,
                 loading: false,
-                img: action.data
+                error: null
             }
         case type.GET_FETCH_FAILED:
             return {
                 ...state,
+                img: "",
                 loading: false,
                 error: action.message,
             }

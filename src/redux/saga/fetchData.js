@@ -1,12 +1,15 @@
 import { call, put, takeEvery } from 'redux-saga/effects'
 
-const apiUrl = import.meta.env.VITE_APP_URL;
+const apiUrl = import.meta.env.VITE_APP_URL + 'enhance';
 
 async function getApi(formData) {
     return fetch(apiUrl, {
         method: 'POST',
         body: formData,
-    }).then(async (response) => await response.blob())
+    }).then(async (response) => {
+        await response.blob()
+    }
+    )
         .catch((error) => { throw error })
 }
 
