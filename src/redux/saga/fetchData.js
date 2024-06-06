@@ -1,6 +1,6 @@
 import { call, put, takeEvery } from 'redux-saga/effects'
 
-const apiUrl = import.meta.env.VITE_APP_URL+"enhance";
+const apiUrl = import.meta.env.VITE_APP_URL;
 
 async function getApi(formData) {
     return fetch(apiUrl, {
