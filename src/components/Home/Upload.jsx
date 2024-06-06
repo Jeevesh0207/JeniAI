@@ -3,13 +3,55 @@ import { useDropzone } from "react-dropzone";
 import { v4 as uuidv4 } from "uuid";
 import { getImage, setData } from "../../redux/actions";
 import { useDispatch, useSelector } from "react-redux";
+import { toast } from "react-toastify";
 
 function Upload({ setfile, setScale, setEnhance }) {
   const dispatch = useDispatch();
   const [image, setImage] = useState(null);
   const { img, loading } = useSelector((state) => state.getImage);
 
+  const notify = (type, msg) => {
+    const baseOptions = {
+      position: "top-right",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "colored",
+    };
+    switch (type) {
+      case "success":
+        toast.success(msg, baseOptions);
+        break;
+      case "error":
+        toast.error(msg, baseOptions);
+        break;
+      case "warning":
+        toast.warn(msg, baseOptions);
+        break;
+      case "info":
+      default:
+        toast.info(msg, baseOptions);
+        break;
+    }
+  };
+
   const onDrop = useCallback((acceptedFiles) => {
+    const maxSize = 8388608; // 8MB in bytes
+
+    // Filter out files larger than 8MB
+    const validFiles = acceptedFiles.filter((file) => file.size <= maxSize);
+
+    if (validFiles.length === 0) {
+      notify(
+        "error",
+        "Please select files smaller than 8MB."
+      );
+      return;
+    }
+
     setImage(acceptedFiles);
     setScale(2);
     setEnhance(false);
