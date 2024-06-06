@@ -1,0 +1,23 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.App {
+    width: 100%;
+    min-height: 100vh;
+    /* background-color: #850d41; */
+    /* background: linear-gradient(to right, #871041, #4a0928);
+    background: linear-gradient(to top, #871041, #000000);
+    background: linear-gradient(to top, #871041, #980c4b, #670733, #330319, #000000);
+    background: linear-gradient(to top, #871041, #5e1033, #302018, #000000);*/
+
+    background: linear-gradient(to top, #871041, #5c0c31, #2c0915, #000000), radial-gradient(circle, rgba(255, 255, 255, 0.05), rgba(0, 0, 0, 0.5));
+    background-blend-mode: overlay;
+
+    background: linear-gradient(to top, #000000, #2c0915, #5c0c31, #710632, #5c0c31, #2c0915, #000000),
+        radial-gradient(circle, rgba(255, 255, 255, 0.05), rgba(0, 0, 0, 0.5));
+    background-blend-mode: overlay;
+
+
+}

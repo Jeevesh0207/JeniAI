@@ -1,0 +1,42 @@
+
+.Navbar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Navbar {
+    width: 100%;
+}
+
+.Navbar .navbar_container{
+    width: 80%;
+    min-width: 1200px;
+    max-width: 1500px;
+    min-height: auto;
+}
+
+@media screen and (max-width:1212px) {
+    .Navbar .navbar_container{
+        width: 98%;
+        min-width: auto;
+    }
+}
+
+
+.Navbar h1 {
+    padding: 15px 10px;
+    color: #fff;
+    font-weight: 400;
+    font-size: 35px;
+    font-family: Magic;
+    letter-spacing: 2px;
+    margin: 0;
+}
+
+@media screen and (max-width:600px) {
+    .Navbar h1{
+        font-size: 30px;
+        text-align: center;
+    }
+}
