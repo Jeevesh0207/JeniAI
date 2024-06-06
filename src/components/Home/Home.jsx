@@ -84,7 +84,7 @@ function Home() {
           <p>
             Experience the magic of Jeni's AI photo enhancer. Our cutting-edge
             technology allows you to instantly improve, sharpen, and clarify
-            your media files with unparalleled ease.
+            your media files with unparalleled ease
           </p>
         </div>
         <div className="Upload">
